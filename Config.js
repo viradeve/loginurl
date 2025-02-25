@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'GrowPlus',   // name of the server
+    name: 'NgawiPS',   // name of the server
 
     server_data: {
         ip: "127.0.0.1",    // your enet host
