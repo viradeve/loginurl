@@ -26,6 +26,8 @@ app.use((req, res) => {
     console.log(`[${new Date().toLocaleString()}] Missing file: ${req.url} [${req.method}] - ${res.statusCode}`);
     return res.sendStatus(404);
 });
+// static files
+app.use(express.static(path.join(__dirname, 'public')));
 
 // exporting express app
 module.exports = app;
