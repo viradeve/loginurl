@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'NgawiPS',   // name of the server
+    name: 'Panel',   // name of the server
 
     server_data: {
         ip: "127.0.0.1",    // your enet host
