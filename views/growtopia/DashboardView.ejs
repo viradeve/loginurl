@@ -3,9 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <titleLogin - Dashboard</title>
+    <title>Login - Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="stylesheet" href="/base.css">
+    <style>
+        /* Tempelkan CSS yang Anda kirim di sini */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(90deg, #1a1a1a, #2c3e50); /* Gradien hitam ke biru tua */
+        }
+
+        .w-screen.h-screen {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .border-2.border-\[\#2b4d6d\] {
+            border: 2px solid #2b4d6d;
+            padding: 20px;
+            background: linear-gradient(to bottom right, #2c3e50, #34495e); /* Gradien biru tua */
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(43, 77, 109, 0.5);
+            color: #eeeeee; /* Warna teks putih */
+            min-width: 50vw;
+        }
+
+        .flex.items-center.border-2.border-\[\#136a92\] {
+            display: flex;
+            align-items: center;
+            border: 2px solid #136a92;
+            border-radius: 8px;
+            background: #34495e; /* Background input biru tua */
+            padding: 10px;
+            gap: 10px;
+        }
+
+        .flex.items-center.border-2.border-\[\#136a92\] input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #eeeeee; /* Warna teks input putih */
+            font-size: 16px;
+        }
+
+        .flex.items-center.border-2.border-\[\#136a92\] input::placeholder {
+            color: #888888; /* Warna placeholder abu-abu */
+        }
+
+        .px-2.py-1.rounded {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .bg-\[\#00ff00\] {
+            background: #ffcc00; /* Warna kuning */
+            color: #000000; /* Warna teks hitam */
+        }
+
+        .bg-\[\#00ff00\]:hover {
+            background: #e6b800; /* Warna kuning lebih gelap saat hover */
+        }
+
+        .bg-\[\#00b8ff\] {
+            background: #00b8ff;
+            color: #ffffff;
+        }
+
+        .bg-\[\#00b8ff\]:hover {
+            background: #06a4dd;
+        }
+
+        #toggleLogPassword {
+            cursor: pointer;
+            color: #eeeeee; /* Warna ikon putih */
+        }
+    </style>
 </head>
 <body class="bg-transparent">
     <div class="w-screen h-screen flex justify-center items-center">
