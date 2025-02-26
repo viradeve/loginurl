@@ -5,6 +5,6 @@ module.exports = {
         ip: "127.0.0.1",    // your enet host
         port: "17091",  // your enet port
         meta: "localhost",
-        loginurl: "137.0.0.1"   // login dashboard
+        loginurl: "log.manes.my.id"   // login dashboard
     }
 };
