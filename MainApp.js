@@ -27,5 +27,8 @@ app.use((req, res) => {
     return res.sendStatus(404);
 });
 
+// static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 // exporting express app
 module.exports = app;
