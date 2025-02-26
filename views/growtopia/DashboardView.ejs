@@ -16,95 +16,96 @@
         /* Tempelkan CSS yang Anda kirim di sini */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-            text-decoration: none;
-            list-style: none;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(90deg, #1a1a1a, #2c3e50); /* Gradien hitam ke biru tua */
-        }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: transparent; /* Background body transparan */
+}
 
-        .w-screen.h-screen {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.w-screen.h-screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .border-2.border-\[\#2b4d6d\] {
-            border: 2px solid #2b4d6d;
-            padding: 20px;
-            background: linear-gradient(to bottom right, #2c3e50, #34495e); /* Gradien biru tua */
-            border-radius: 15px;
-            box-shadow: 0 0 30px rgba(43, 77, 109, 0.5);
-            color: #eeeeee; /* Warna teks putih */
-            min-width: 50vw;
-        }
+.border-2.border-\[\#2b4d6d\] {
+    border: 2px solid #2b4d6d;
+    padding: 20px;
+    background: rgba(43, 77, 109, 0.8); /* Background container semi-transparan */
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(43, 77, 109, 0.5);
+    color: #eeeeee; /* Warna teks putih */
+    min-width: 50vw;
+    backdrop-filter: blur(10px); /* Efek blur untuk transparansi */
+}
 
-        .flex.items-center.border-2.border-\[\#136a92\] {
-            display: flex;
-            align-items: center;
-            border: 2px solid #136a92;
-            border-radius: 8px;
-            background: #34495e; /* Background input biru tua */
-            padding: 10px;
-            gap: 10px;
-        }
+.flex.items-center.border-2.border-\[\#136a92\] {
+    display: flex;
+    align-items: center;
+    border: 2px solid #136a92;
+    border-radius: 8px;
+    background: rgba(52, 73, 94, 0.8); /* Background input semi-transparan */
+    padding: 10px;
+    gap: 10px;
+}
 
-        .flex.items-center.border-2.border-\[\#136a92\] input {
-            width: 100%;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #eeeeee; /* Warna teks input putih */
-            font-size: 16px;
-        }
+.flex.items-center.border-2.border-\[\#136a92\] input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #eeeeee; /* Warna teks input putih */
+    font-size: 16px;
+}
 
-        .flex.items-center.border-2.border-\[\#136a92\] input::placeholder {
-            color: #888888; /* Warna placeholder abu-abu */
-        }
+.flex.items-center.border-2.border-\[\#136a92\] input::placeholder {
+    color: #888888; /* Warna placeholder abu-abu */
+}
 
-        .px-2.py-1.rounded {
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+.px-2.py-1.rounded {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
 
-        .bg-\[\#00ff00\] {
-            background: #ffcc00; /* Warna kuning */
-            color: #000000; /* Warna teks hitam */
-        }
+.bg-\[\#00ff00\] {
+    background: #ffcc00; /* Warna kuning */
+    color: #000000; /* Warna teks hitam */
+}
 
-        .bg-\[\#00ff00\]:hover {
-            background: #e6b800; /* Warna kuning lebih gelap saat hover */
-        }
+.bg-\[\#00ff00\]:hover {
+    background: #e6b800; /* Warna kuning lebih gelap saat hover */
+}
 
-        .bg-\[\#00b8ff\] {
-            background: #00b8ff;
-            color: #ffffff;
-        }
+.bg-\[\#00b8ff\] {
+    background: #00b8ff;
+    color: #ffffff;
+}
 
-        .bg-\[\#00b8ff\]:hover {
-            background: #06a4dd;
-        }
+.bg-\[\#00b8ff\]:hover {
+    background: #06a4dd;
+}
 
-        #toggleLogPassword {
-            cursor: pointer;
-            color: #eeeeee; /* Warna ikon putih */
-        }
+#toggleLogPassword {
+    cursor: pointer;
+    color: #eeeeee; /* Warna ikon putih */
+}
     </style>
 </head>
 <body>
