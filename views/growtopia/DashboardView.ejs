@@ -175,14 +175,14 @@ body {
         });
     
         async function regis() {
-            const token = btoa(`_token=X3Rva2VuPU5PTkUmZ3Jvd0lkPSZwYXNzd29yZD0&growId=${growId.value}&password=${password.value}`);
+            const token = btoa(`_token=NONE&growId=${growId.value}&password=${password.value}`);
             window.location.href = "/player/growid/login/validate?data=" + encodeURIComponent(token);
         }
 
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
 
-            const token = btoa(`_token=X3Rva2VuPU5PTkUmZ3Jvd0lkPSZwYXNzd29yZD0&growId=${growId.value}&password=${password.value}`);
+            const token = btoa(`_token=NONE&growId=${growId.value}&password=${password.value}`);
 
             window.location.href = "/player/growid/login/validate?data=" + encodeURIComponent(token);
         });
