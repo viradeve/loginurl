@@ -1,34 +1,48 @@
-// importing the necessary modules
+// importing required modules
 const express = require('express');
 const path = require('path');
-const fs = require('fs');
+const ejs = require('ejs');
+const bodyParser = require('body-parser');
 
 // creating an express app
 const app = express();
 
-// importing the security
-for (let file of fs.readdirSync(path.join(__dirname, 'security'))) {
-    require(path.join(__dirname, 'security', file))(app);
-}
+// setting the middleware
+app.use(require(path.join(__dirname, 'middleware', 'Compression.js')));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(require(path.join(__dirname, 'middleware', 'RequestLogger.js')));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 
-// importing the middlewares
-for (let file of fs.readdirSync(path.join(__dirname, 'middleware'))) {
-    require(path.join(__dirname, 'middleware', file))(app);
-}
+// setting the security
+app.use(require(path.join(__dirname,'security', 'IPBlacklist.js')));
+app.use(require(path.join(__dirname,'security', 'RequestSizeLimiter.js')));
+app.use(require(path.join(__dirname,'security', 'RateLimiter.js')));
+app.use(require(path.join(__dirname,'security', 'XSSProtection.js')));
 
-// importing the routes
-require(path.join(__dirname, 'routes', 'Index.js'))(app);
-require(path.join(__dirname, 'routes', 'GrowtopiaGame.js'))(app);
-require(path.join(__dirname, 'routes', 'GrowtopiaWebview.js'))(app);
+// setting the routes
+app.use('/player', require(path.join(__dirname,'routes', 'GrowtopiaWebview.js')));
+app.use('/growtopia', require(path.join(__dirname,'routes', 'GrowtopiaGame.js')));
 
-// 404 route
-app.use((req, res) => {
-    console.log(`[${new Date().toLocaleString()}] Missing file: ${req.url} [${req.method}] - ${res.statusCode}`);
-    return res.sendStatus(404);
-});
-
-// static files
+// setting the static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// exporting express app
+// setting the 404 page
+app.use((req, res) => {
+    const currentTime = new Date().toISOString();
+    const clientIP = req.headers['x-forwarded-for']?.split(',')[0] || req.socket.remoteAddress || req.ip;
+    console.warn(
+        `[${req.get('host')}] ${clientIP} Missing File -> ${req.method} ${req.originalUrl} - ${currentTime}`,
+    );
+    res.status(200).send('404 Page Not Found');
+});
+
+// Add error handling middleware
+app.use((err, req, res, next) => {
+    console.error('Error:', err);
+    res.status(200).send('Internal Server Error');
+});
+
+// exposing the app
 module.exports = app;
